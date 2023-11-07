@@ -31,16 +31,5 @@ pipeline {
                     sh 'tar -czvf my-artifacts.tar.gz -C /tmp/ .'
                 }
         }
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    def customImage = docker.build('simple-maven-app')
-                    customImage.inside {
-                        sh 'cp -r . /app'
-                    }
-        }
-    }
-}
-
     }
 }
