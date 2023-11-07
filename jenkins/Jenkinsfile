@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Archive Artifacts') {
             steps {
-                    sh 'tar -czvf simple-maven-app.tar.gz -C target/*.jar .'
+                    sh 'tar -czvf simple-maven-app.tar.gz -C ${WORKSPACE}/target/*.jar .'
                 }
         }
     }
